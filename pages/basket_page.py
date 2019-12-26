@@ -3,13 +3,13 @@ from .locators import BasketPageLocators
 
 class BasketPage(BasePage):
 
-
     def should_basket_page(self):
         self.should_button_basket()
         self.should_basket_is_empty() 
         self.should_in_basket_not_item()
 
     def go_to_basket(self):
+        self.should_button_basket()
         button = self.browser.find_element(*BasketPageLocators.BASKET_BUTTOM_LINK)
         button.click()
 

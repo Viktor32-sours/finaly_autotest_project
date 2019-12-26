@@ -28,3 +28,16 @@ def browser(request):
     yield browser
     print("\nquit browser..")
     browser.quit()
+
+def pytest_configure(config):
+    config.addinivalue_line(
+        "markers", "login_user: mark test to run only on mark 'login_user'"
+        )
+
+    config.addinivalue_line(
+        "markers", "login_guest: mark test to run only on mark 'login_guest'"
+        )
+
+    config.addinivalue_line(
+        "markers", "need_review: mark test to run only on mark 'need_review'"
+        )
