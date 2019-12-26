@@ -12,8 +12,7 @@ class ProductPage(BasePage):
         self.solve_quiz_and_get_code()
         self.correct_product_name_on_basket()
         self.correct_product_price_on_basket()
-        self.should_disappear_success_message()
-        self.should_not_be_success_message()
+       
 
     def add_product_to_basket(self):
         button = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_LINK)
@@ -36,6 +35,7 @@ class ProductPage(BasePage):
         assert self.is_element_present(*ProductPageLocators.PRICE_PRODUCT_LINK), "Product price is not presented"
 
     def should_be_product_add_button(self):
+        
         assert self.is_element_present(*ProductPageLocators.ADD_TO_BASKET_LINK), "Button add product is not presented" 
 
     def should_disappear_success_message(self):
